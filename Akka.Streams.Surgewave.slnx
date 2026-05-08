@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Akka.Streams.Surgewave/Akka.Streams.Surgewave.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Akka.Streams.Surgewave.Tests/Akka.Streams.Surgewave.Tests.csproj" />
+  </Folder>
+</Solution>
