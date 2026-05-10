@@ -4,7 +4,7 @@ using Akka.Streams;
 using Akka.Streams.Stage;
 using Akka.Streams.Surgewave.Messages;
 using Akka.Streams.Surgewave.Settings;
-using KL.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Abstractions;
 
 /// <summary>
 /// Transactional flow stage using Surgewave's exactly-once semantics.

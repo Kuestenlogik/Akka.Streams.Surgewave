@@ -1,6 +1,6 @@
 namespace Akka.Streams.Surgewave.Messages;
 
-using KL.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Abstractions;
 
 /// <summary>
 /// Factory for creating producer messages with passthrough support.

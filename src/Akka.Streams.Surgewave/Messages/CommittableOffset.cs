@@ -1,6 +1,6 @@
 namespace Akka.Streams.Surgewave.Messages;
 
-using KL.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Abstractions;
 
 /// <summary>
 /// Represents the offset of a consumed message, waiting to be committed.

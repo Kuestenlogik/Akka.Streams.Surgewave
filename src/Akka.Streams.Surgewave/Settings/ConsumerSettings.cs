@@ -2,10 +2,10 @@ namespace Akka.Streams.Surgewave.Settings;
 
 using Akka.Actor;
 using Akka.Configuration;
-using KL.Surgewave.Client;
-using KL.Surgewave.Client.Abstractions;
-using KL.Surgewave.Client.Consumer;
-using KL.Surgewave.Client.Serialization;
+using Kuestenlogik.Surgewave.Client;
+using Kuestenlogik.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Consumer;
+using Kuestenlogik.Surgewave.Client.Serialization;
 
 /// <summary>
 /// Typed configuration for Surgewave consumer stages, built from HOCON or fluent API.

@@ -7,9 +7,9 @@
   <ItemGroup>
     <PackageReference Include="Akka.Streams" />
     <PackageReference Include="Akka.Hosting" />
-    <PackageReference Include="KL.Surgewave.Client" />
-    <PackageReference Include="KL.Surgewave.Client.SchemaRegistry" />
-    <PackageReference Include="KL.Surgewave.Client.SchemaRegistry.Protobuf" />
+    <PackageReference Include="Kuestenlogik.Surgewave.Client" />
+    <PackageReference Include="Kuestenlogik.Surgewave.Client.SchemaRegistry" />
+    <PackageReference Include="Kuestenlogik.Surgewave.Client.SchemaRegistry.Protobuf" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
   </ItemGroup>
 

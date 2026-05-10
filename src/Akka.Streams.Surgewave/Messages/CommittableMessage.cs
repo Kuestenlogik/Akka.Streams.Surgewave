@@ -1,6 +1,6 @@
 namespace Akka.Streams.Surgewave.Messages;
 
-using KL.Surgewave.Client.Consumer;
+using Kuestenlogik.Surgewave.Client.Consumer;
 
 /// <summary>
 /// A consumed message paired with a committable offset.

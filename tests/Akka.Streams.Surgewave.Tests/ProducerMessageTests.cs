@@ -1,7 +1,7 @@
 namespace Akka.Streams.Surgewave.Tests;
 
 using Akka.Streams.Surgewave.Messages;
-using KL.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Abstractions;
 using Xunit;
 
 public class ProducerMessageTests

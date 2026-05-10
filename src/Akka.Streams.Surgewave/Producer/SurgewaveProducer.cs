@@ -3,7 +3,7 @@ namespace Akka.Streams.Surgewave.Producer;
 using Akka.Streams.Dsl;
 using Akka.Streams.Surgewave.Messages;
 using Akka.Streams.Surgewave.Settings;
-using KL.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Abstractions;
 
 /// <summary>
 /// Static factory for Surgewave producer sinks and flows.

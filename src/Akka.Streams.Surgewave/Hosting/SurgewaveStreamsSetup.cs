@@ -1,6 +1,6 @@
 namespace Akka.Streams.Surgewave.Hosting;
 
-using KL.Surgewave.Client.Consumer;
+using Kuestenlogik.Surgewave.Client.Consumer;
 
 /// <summary>
 /// Typed configuration object for Surgewave Streams, used by WithSurgewaveStreams().

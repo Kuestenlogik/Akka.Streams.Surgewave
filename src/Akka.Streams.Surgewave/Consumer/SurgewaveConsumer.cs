@@ -5,8 +5,8 @@ using Akka.Streams.Surgewave.Control;
 using Akka.Streams.Surgewave.Messages;
 using Akka.Streams.Surgewave.Settings;
 using Akka.Streams.Surgewave.Subscriptions;
-using KL.Surgewave.Client.Abstractions;
-using KL.Surgewave.Client.Consumer;
+using Kuestenlogik.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Consumer;
 
 /// <summary>
 /// Static factory for Surgewave consumer sources.

@@ -5,9 +5,9 @@ using Akka.Streams.Stage;
 using Akka.Streams.Surgewave.Control;
 using Akka.Streams.Surgewave.Settings;
 using Akka.Streams.Surgewave.Subscriptions;
-using KL.Surgewave.Client;
-using KL.Surgewave.Client.Abstractions;
-using KL.Surgewave.Client.Consumer;
+using Kuestenlogik.Surgewave.Client;
+using Kuestenlogik.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Consumer;
 
 /// <summary>
 /// Source stage for scenarios where offsets are stored in an external system

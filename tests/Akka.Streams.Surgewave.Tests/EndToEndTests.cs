@@ -1,10 +1,10 @@
 namespace Akka.Streams.Surgewave.Tests;
 
 using System.Text;
-using KL.Surgewave.Client;
-using KL.Surgewave.Client.Abstractions;
-using KL.Surgewave.Client.Consumer;
-using KL.Surgewave.Runtime;
+using Kuestenlogik.Surgewave.Client;
+using Kuestenlogik.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Consumer;
+using Kuestenlogik.Surgewave.Runtime;
 using Xunit;
 using Xunit.Abstractions;
 

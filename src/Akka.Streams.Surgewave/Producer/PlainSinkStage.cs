@@ -3,7 +3,7 @@ namespace Akka.Streams.Surgewave.Producer;
 using Akka.Streams;
 using Akka.Streams.Stage;
 using Akka.Streams.Surgewave.Settings;
-using KL.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Abstractions;
 
 /// <summary>
 /// GraphStage that consumes ProducerRecord and publishes to Surgewave.

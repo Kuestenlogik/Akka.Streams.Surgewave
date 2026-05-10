@@ -1,7 +1,7 @@
 namespace Akka.Streams.Surgewave.Tests;
 
 using Akka.Streams.Surgewave.Messages;
-using KL.Surgewave.Client.Consumer;
+using Kuestenlogik.Surgewave.Client.Consumer;
 using Xunit;
 
 /// <summary>

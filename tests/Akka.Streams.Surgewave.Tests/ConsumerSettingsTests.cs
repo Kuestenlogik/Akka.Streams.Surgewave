@@ -1,7 +1,7 @@
 namespace Akka.Streams.Surgewave.Tests;
 
 using Akka.Streams.Surgewave.Settings;
-using KL.Surgewave.Client.Consumer;
+using Kuestenlogik.Surgewave.Client.Consumer;
 using Xunit;
 
 public class ConsumerSettingsTests

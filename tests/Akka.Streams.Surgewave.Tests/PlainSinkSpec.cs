@@ -1,6 +1,6 @@
 namespace Akka.Streams.Surgewave.Tests;
 
-using KL.Surgewave.Client.Abstractions;
+using Kuestenlogik.Surgewave.Client.Abstractions;
 using Xunit;
 
 /// <summary>
