@@ -2,6 +2,16 @@
 
 Akka.Streams connector for [Surgewave](https://github.com/Kuestenlogik/Surgewave) — Sources, Sinks, and Flows for reactive Surgewave topic integration. Analogous to [Akka.Streams.Kafka](https://github.com/akkadotnet/Akka.Streams.Kafka) (Alpakka).
 
+> **NuGet PackageId:** `Kuestenlogik.Akka.Streams.Surgewave` &nbsp;·&nbsp; **Namespace:** `Akka.Streams.Surgewave`
+>
+> The `Akka.*` prefix on nuget.org is verified-reserved by the Akka.NET team, so this package ships under the `Kuestenlogik.*` namespace prefix (Petabridge pattern). API surface and namespaces follow the Akka.Streams convention unchanged.
+
+## Installation
+
+```bash
+dotnet add package Kuestenlogik.Akka.Streams.Surgewave
+```
+
 ## Features
 
 - **PlainSource / CommittableSource** — Consumer sources with backpressure and offset commit

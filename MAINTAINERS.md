@@ -39,8 +39,21 @@ git push --tags
 
 | Secret | Scope | Used for |
 |---|---|---|
-| `NUGET_API_KEY` | Org-level | nuget.org publish (gate on `env.X != ''`) |
+| `NUGET_API_KEY` | Org-level | nuget.org publish (gate on `env.X != ''`). Glob must include `Kuestenlogik.Akka.Streams.Surgewave*` — the package ships under the `Kuestenlogik.*` namespace because the `Akka.*` prefix on nuget.org is verified-reserved by the Akka.NET team. |
 | `KUESTENLOGIK_PACKAGES_TOKEN` | Org-level | Restore from GitHub Packages during build (Surgewave-Client dependency) |
 
 If `NUGET_API_KEY` is missing, the workflow skips nuget.org silently and
 GitHub Packages still receives the build.
+
+## NuGet package naming
+
+| Property | Value |
+|---|---|
+| **PackageId** | `Kuestenlogik.Akka.Streams.Surgewave` |
+| **Namespace** | `Akka.Streams.Surgewave` (unchanged — follows Akka.Streams convention) |
+| **Assembly name** | `Akka.Streams.Surgewave` (unchanged) |
+| **Repo / csproj** | `Akka.Streams.Surgewave` (unchanged) |
+
+The PackageId-only rewrite happens in `Directory.Build.props`:
+`<PackageId>Kuestenlogik.$(MSBuildProjectName)</PackageId>`. xunit-Pattern:
+PackageId `xunit.v3` ships namespace `Xunit`.
