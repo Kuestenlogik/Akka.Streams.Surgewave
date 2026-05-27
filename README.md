@@ -1,47 +1,34 @@
-# Akka.Streams.Surgewave
+# Akka.Streams.Surgewave — ARCHIVED
 
-Akka.Streams connector for [Surgewave](https://github.com/Kuestenlogik/Surgewave) — Sources, Sinks, and Flows for reactive Surgewave topic integration. Analogous to [Akka.Streams.Kafka](https://github.com/akkadotnet/Akka.Streams.Kafka) (Alpakka).
+> **This repository is archived.** Active development has moved to
+> [**Kuestenlogik/Akka.Surgewave**](https://github.com/Kuestenlogik/Akka.Surgewave),
+> a consolidated Mono-Repo that ships **two** NuGet packages from a single tag:
+> `Kuestenlogik.Surgewave.AkkaStreams` and `Kuestenlogik.Surgewave.AkkaPersistence`.
 
-> **NuGet PackageId:** `Kuestenlogik.Akka.Streams.Surgewave` &nbsp;·&nbsp; **Namespace:** `Kuestenlogik.Akka.Streams.Surgewave`
->
-> The `Akka.*` prefix on nuget.org is verified-reserved by the Akka.NET team, so this package — and the C# namespaces it ships — live under the `Kuestenlogik.*` prefix (Petabridge pattern, consistent with the rest of the Kuestenlogik / Surgewave package family).
+## History
 
-## Installation
+- This repo published [`Kuestenlogik.Akka.Streams.Surgewave`](https://www.nuget.org/packages/Kuestenlogik.Akka.Streams.Surgewave) v0.1.0 and v0.1.1.
+- v0.2.0+ ships only from the [Akka.Surgewave](https://github.com/Kuestenlogik/Akka.Surgewave) repo under the new id [`Kuestenlogik.Surgewave.AkkaStreams`](https://www.nuget.org/packages/Kuestenlogik.Surgewave.AkkaStreams).
+- The v0.1.x packages remain on nuget.org for existing consumers; they receive no further updates.
+
+## Migration
 
 ```bash
-dotnet add package Kuestenlogik.Akka.Streams.Surgewave
+# remove old
+dotnet remove package Kuestenlogik.Akka.Streams.Surgewave
+# add new
+dotnet add package Kuestenlogik.Surgewave.AkkaStreams
 ```
 
 ```csharp
-using Kuestenlogik.Akka.Streams.Surgewave;
+// before
+using Akka.Streams.Surgewave;
+
+// after
+using Kuestenlogik.Surgewave.AkkaStreams;
 ```
 
-> **v0.2.0 Breaking Change:** the C# namespace was renamed from `Akka.Streams.Surgewave` to `Kuestenlogik.Akka.Streams.Surgewave` so the on-disk source tree, the NuGet package id and the namespace are aligned. v0.1.1 consumers need to update their `using` statements.
-
-## Features
-
-- **PlainSource / CommittableSource** — Consumer sources with backpressure and offset commit
-- **PlainSink / FlexiFlow** — Producer stages with delivery feedback and passthrough support
-- **Transactional** — End-to-end exactly-once consume-transform-produce pipelines
-- **Committer** — Batched offset commits with configurable intervals
-- **Schema Registry** — Typed serialization/deserialization via Surgewave Schema Registry
-- **Partitioned Sources** — Sub-source per partition for partition-local processing
-
-## Quick Start
-
-```csharp
-var control = SurgewaveConsumer
-    .CommittableSource(consumerSettings, Subscriptions.Topics("orders"))
-    .SelectAsync(10, async msg =>
-    {
-        await ProcessOrder(msg.Record.Key, msg.Record.Value);
-        return msg.CommittableOffset;
-    })
-    .ToMaterialized(
-        Committer.Sink(CommitterSettings.Create(system)),
-        DrainingControl<Done>.Create)
-    .Run(materializer);
-```
+The API surface is otherwise compatible — `SurgewaveConsumer`, `SurgewaveProducer`, `Committer`, etc. exist in the new namespace.
 
 ## License
 
