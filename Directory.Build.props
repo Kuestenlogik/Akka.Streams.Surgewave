@@ -39,19 +39,25 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(IsPackable)' != 'false'">
-    <Version>0.1.1</Version>
-    <AssemblyVersion>0.1.1</AssemblyVersion>
-    <FileVersion>0.1.1</FileVersion>
+    <Version>0.2.0</Version>
+    <AssemblyVersion>0.2.0</AssemblyVersion>
+    <FileVersion>0.2.0</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <!--
-      Akka.* ist auf nuget.org als verified-prefix von Petabridge/Akka.NET
-      reserviert (Owner 'Akka'). Push einer neuen Akka.*-ID returnt 409
-      Conflict. Wir publishen unter Kuestenlogik.* (analog allen anderen
-      Surgewave-Repos), Namespace + Assembly-Name bleiben unveraendert
-      bei Akka.Streams.Surgewave (xunit-Pattern: PackageId 'xunit.v3' /
-      Namespace 'Xunit').
+      PackageId wird vom csproj-Namen abgeleitet
+      ('Kuestenlogik.Akka.Streams.Surgewave', siehe src/-Folder). Kein
+      Override mehr noetig: csproj, Namespace und PackageId sind in
+      v0.2.0 vollstaendig auf Kuestenlogik.Akka.Streams.Surgewave
+      aligned (Bowire-Konvention). v0.1.1 hatte noch das xunit-
+      Pattern (csproj = Akka.Streams.Surgewave, PackageId =
+      Kuestenlogik.Akka.Streams.Surgewave) — Breaking Change in v0.2.0:
+      Konsumenten muessen 'using Akka.Streams.Surgewave;' zu
+      'using Kuestenlogik.Akka.Streams.Surgewave;' aendern.
+
+      Hintergrund Naming: 'Akka.*' ist auf nuget.org als verified-prefix
+      von Petabridge/Akka.NET reserviert (Owner 'Akka'); ein direkter
+      Push als 'Akka.Streams.Surgewave' returned 409 Conflict.
     -->
-    <PackageId>Kuestenlogik.$(MSBuildProjectName)</PackageId>
   </PropertyGroup>
 
   <!-- icon.png + README.md aus dem Repo-Root in jedes NuGet einbetten.

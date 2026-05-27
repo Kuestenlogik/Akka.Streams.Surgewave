@@ -47,13 +47,19 @@ GitHub Packages still receives the build.
 
 ## NuGet package naming
 
+Aligned in v0.2.0 across all four artifacts:
+
 | Property | Value |
 |---|---|
-| **PackageId** | `Kuestenlogik.Akka.Streams.Surgewave` |
-| **Namespace** | `Akka.Streams.Surgewave` (unchanged — follows Akka.Streams convention) |
-| **Assembly name** | `Akka.Streams.Surgewave` (unchanged) |
-| **Repo / csproj** | `Akka.Streams.Surgewave` (unchanged) |
+| **Repo** | `Akka.Streams.Surgewave` (preserves the Akka-style discoverability in github.com/Kuestenlogik/...) |
+| **csproj-Folder** | `src/Kuestenlogik.Akka.Streams.Surgewave/` |
+| **csproj name** | `Kuestenlogik.Akka.Streams.Surgewave.csproj` |
+| **Assembly name** | `Kuestenlogik.Akka.Streams.Surgewave` |
+| **C# Namespace** | `Kuestenlogik.Akka.Streams.Surgewave` |
+| **NuGet PackageId** | `Kuestenlogik.Akka.Streams.Surgewave` |
 
-The PackageId-only rewrite happens in `Directory.Build.props`:
-`<PackageId>Kuestenlogik.$(MSBuildProjectName)</PackageId>`. xunit-Pattern:
-PackageId `xunit.v3` ships namespace `Xunit`.
+The `Akka.*` prefix on nuget.org is verified-reserved by the Akka.NET team
+(owner `Akka`); a direct push as `Akka.Streams.Surgewave` returned `409
+Conflict`. Petabridge-pattern: ship under our own `Kuestenlogik.*`
+namespace. v0.1.1 had only the PackageId prefixed (xunit-style csproj /
+namespace mismatch); v0.2.0 aligns all four (Bowire-/Kuestenlogik-Konvention).
